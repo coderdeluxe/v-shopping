@@ -1,5 +1,3 @@
-import react from "react";
-
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-buttom/custom-button.component";
 
