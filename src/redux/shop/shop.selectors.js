@@ -10,11 +10,21 @@ export const selectCollections = createSelector(
 
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  (collections) => Object.keys(collections).map((key) => collections[key])
+  (collections) =>
+    (collections ? Object.keys(collections).map((key) => collections[key]) : null)
 );
 
 export const selectCollection = memoize((collectionUrlParam) =>
   createSelector([selectCollections], (collections) =>
-    collections ? collections[collectionUrlParam] : null
+    collections ? collections[collectionUrlParam.toLowerCase()] : null
   )
+);
+
+export const selectIsCollectionFetching = createSelector(
+  [selectShop],
+  (shop) => shop.isFetching
+);
+
+export const selectIsCollectionsLoaded = createSelector([selectShop], (shop) =>
+  Boolean(shop.collections)
 );
