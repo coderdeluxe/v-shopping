@@ -23,14 +23,14 @@ const Header = ({ currentUser, toggleCart, signOutStart }) => (
       <Logo className="logo" />
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink to="/shop">Shop</OptionLink>
-      <OptionLink to="/shop">Contact</OptionLink>
+      <OptionLink to="/Shop">Shop</OptionLink>
+      <OptionLink to="/Shop">Contact</OptionLink>
       {currentUser ? (
         <OptionLink as="div" onClick={signOutStart}>
           SIGN OUT
         </OptionLink>
       ) : (
-        <OptionLink to="/signin">SIGN IN</OptionLink>
+        <OptionLink to="/SignIn">SIGN IN</OptionLink>
       )}
       <CartIcon />
     </OptionsContainer>
